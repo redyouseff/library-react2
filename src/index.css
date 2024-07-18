@@ -1,0 +1,42 @@
+* {
+  background-color: black;
+
+  padding: 9px;
+}
+
+.btn:hover {
+  background-color: white;
+  color: #000;
+}
+
+.search {
+  margin-top: 10px;
+}
+
+.bar {
+  width: 75%;
+}
+
+.icon:hover {
+  background-color: #0DCAF0;
+}
+.close{
+  top: 150px;
+  left: 150px;
+}
+.close:hover {
+  background-color: #DC3545;
+
+}
+
+Nav {
+  background: #000;
+  width: 100%;
+  padding: 0;
+}
+
+.NavLink:hover {
+  color: black;
+  background-color: #0DCAF0;
+  border-radius: 10px;
+}
