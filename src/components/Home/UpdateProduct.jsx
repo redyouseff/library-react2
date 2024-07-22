@@ -30,7 +30,7 @@ const UpdateProduct = () => {
     }
     const res=useSelector((state)=>state.allproduct.product)
     useEffect(()=>{
-        if(res.status==200){
+        if(res.status=="success"){
       
             notify("product is updated ","success")
            setId("")
