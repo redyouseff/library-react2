@@ -20,6 +20,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/order/:id' element={<SingleOrder></SingleOrder>}></Route>
+        <Route path='/:id' element={<SingleCustomer></SingleCustomer>}></Route>
         <Route path='/CreateProduct' element={<CreateProduct></CreateProduct>}></Route>
         <Route path='/DeleteProduct' element={<DeleteProduct></DeleteProduct>}></Route>
         <Route path='/UpdateProduct' element={<UpdateProduct></UpdateProduct>}></Route>
