@@ -44,11 +44,11 @@ console.log(temp)
         
           <Nav className=" bg-dark w-100 text-black">
           <Nav.Link className='NavLink m-auto text-white' href="/">Home</Nav.Link>
-            <Nav.Link className='NavLink m-auto text-white' href="http://localhost:3000/CreateOrder">create Order</Nav.Link>
-            <Nav.Link className='NavLink m-auto text-white' href="http://localhost:3000/CreateProduct">create Product</Nav.Link>
-            <Nav.Link className='NavLink m-auto text-white' href="http://localhost:3000/UpdateProduct">update quantity</Nav.Link>
-            <Nav.Link className='NavLink m-auto text-white' href="http://localhost:3000/DeleteProduct">delete Product</Nav.Link>
-            <Nav.Link className='NavLink m-auto text-white' href="http://localhost:3000/AllOrder">all order</Nav.Link>
+            <Nav.Link className='NavLink m-auto text-white' href="https://library-react2.vercel.app/CreateOrder">create Order</Nav.Link>
+            <Nav.Link className='NavLink m-auto text-white' href="https://library-react2.vercel.app/CreateProduct">create Product</Nav.Link>
+            <Nav.Link className='NavLink m-auto text-white' href="https://library-react2.vercel.app/UpdateProduct">update quantity</Nav.Link>
+            <Nav.Link className='NavLink m-auto text-white' href="https://library-react2.vercel.app/DeleteProduct">delete Product</Nav.Link>
+            <Nav.Link className='NavLink m-auto text-white' href="https://library-react2.vercel.app/AllOrder">all order</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
