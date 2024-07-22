@@ -8,6 +8,7 @@ import UpdateProduct from './components/Home/UpdateProduct';
 import DeleteProduct from './components/Home/DeleteProduct.jsx';
 import CreateOrder from './components/Home/CreateOrder';
 import AllOrders from './components/Home/AllOrders.jsx';
+import { SingleOrder } from './components/singleCustomer/SingleOrder.js';
 
 
 
@@ -17,8 +18,8 @@ function App() {
     
     <BrowserRouter>
       <Routes>
-          <Route path='/' element={<Home />}></Route>
-        <Route path='/:id' element={<SingleCustomer />}></Route>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/order/:id' element={<SingleOrder></SingleOrder>}></Route>
         <Route path='/CreateProduct' element={<CreateProduct></CreateProduct>}></Route>
         <Route path='/DeleteProduct' element={<DeleteProduct></DeleteProduct>}></Route>
         <Route path='/UpdateProduct' element={<UpdateProduct></UpdateProduct>}></Route>

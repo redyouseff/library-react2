@@ -9,7 +9,7 @@ import { GetAllProduct } from '../../redux/Actions/ProductAction';
 
 export default function Home() {
     // const [customers, setCustomers] = useState([]);
-    const [, set] = useState([]);
+  
     const [search, setSearch] = useState("");
     const [tes,settest]=useState([])
     const [loading,setLoading]=useState(true)
@@ -59,7 +59,7 @@ export default function Home() {
             return;
         }
         const filter=customers.filter((item,index)=>{
-            return search==item.id
+            return search==item.id || item.title.toLowerCase().includes(search.toLowerCase());
         })
         setFilteredCustomers(filter)
     };

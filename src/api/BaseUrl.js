@@ -1,3 +1,3 @@
 import axios from "axios";
-const BaseUrl=axios.create({baseURL:"https://gcm-6lio.onrender.com"})
+const BaseUrl=axios.create({baseURL:"http://localhost:1000"})
 export default BaseUrl;

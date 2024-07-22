@@ -11,6 +11,8 @@ const CreateOrder = () => {
     const [quantity,setQuantity]=useState("");
     const dispatch=useDispatch();
     const [loading,setLoading]=useState(true)
+    const [name,setName]=useState("");
+    const [pname,setPname]=useState("")
 
     const [order,setOrder]=useState({
         order:[]
@@ -20,7 +22,8 @@ const CreateOrder = () => {
         e.preventDefault();
        setOrder({
         order:[...order.order,{ id:id,
-            quantity:quantity
+            quantity:quantity,
+            name:pname
        
            }]
     })
@@ -45,9 +48,13 @@ const CreateOrder = () => {
        
     },[order])
     const res=useSelector((state)=>state.allorder.order);
+    
 
   const OnHandelCreate=(e)=>{
     e.preventDefault();
+  
+   
+   console.log(order)
     setLoading(true);
     dispatch(InsertOrder(order))
     setLoading(false)
@@ -75,6 +82,19 @@ const CreateOrder = () => {
   
 
   },[loading,res])
+  
+  const OnHandelChangeName=(e)=>{
+    
+    setName(e.target.value)
+    setOrder(({
+      name:name,
+      order:[...order.order]
+    }))
+  }
+  const OnHandelChangePname=(e)=>{
+    setPname(e.target.value)
+
+  }
 
   return <>
         <Navbar bg="dark" data-bs-theme="dark">
@@ -107,6 +127,9 @@ const CreateOrder = () => {
         <Form.Label className='text-white mb-0 mt-3'>Enter the quantity to update :</Form.Label>
         <Form.Control required onChange={OnHandelChange} type="text" placeholder="qunatity" />
 
+        <Form.Label className='text-white mb-0 mt-3'>Enter name of product :</Form.Label>
+        <Form.Control required onChange={OnHandelChangePname} type="text" placeholder="name" />
+
 
    
        
@@ -129,7 +152,7 @@ const CreateOrder = () => {
                         <tr>
                             <th className='bg-black text-white' style={{ border: '1px solid white' }}>ID</th>
                             <th className='bg-black text-white' style={{ border: '1px solid white' }}>_id</th>
-                          
+                            <th className='bg-black text-white' style={{ border: '1px solid white' }}>name</th>
                             <th className='bg-black text-white' style={{ border: '1px solid white' }}>Delete</th>
                            
 
@@ -142,6 +165,7 @@ const CreateOrder = () => {
                             <tr key={item.id}>
                                 <td style={{ border: '1px solid black' }}>{item.id}</td>
                                 <td style={{ border: '1px solid black' }}>{item.quantity}</td>
+                                <td style={{ border: '1px solid black' }}>{item.name}</td>
                                 <td className='text-center' style={{ border: '1px solid black' }}>
                                     <button className='btn btn-outline-info' key={item.id} id={item.id} onClick={OnHandelDelete}>delete</button> 
                                 </td>
@@ -149,6 +173,8 @@ const CreateOrder = () => {
                         ))}
                     </tbody>
                 </Table>
+                <Form.Label className='text-white mb-1 mt-3'>Enter the name of the order </Form.Label>
+                <Form.Control required onChange={OnHandelChangeName} type="text" placeholder="name" />
                 <button onClick={OnHandelCreate}  className='btn btn-outline-info'>Save</button>
                 <ToastContainer />
     </div>

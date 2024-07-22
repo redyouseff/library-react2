@@ -42,6 +42,26 @@ export const GetOrder=async(dispatch)=>{
     }
 }
 
+export const GetOrderDetails=(id)=>async(dispatch)=>{
+    try{
+        let res = await UseGetData(`/order/${id}`)
+           
+        dispatch({
+            type:"GET_ORDER_DETAILS",
+            payload:res,
+            loading:false
+        })
+    }
+    catch(e){
+        console.log(e)
+        dispatch({
+            type:"Get_Error",
+            payload:"error" +e
+        })
+
+    }
+}
+
 export const DeleteOrders=async(dispatch)=>{
   
 

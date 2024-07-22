@@ -15,7 +15,7 @@ export const orderReducer=(state=initail,action)=>{
             case "GET_ORDER" :{
                 return{
                     loading :true,
-                    order:action.payload
+                    allorder:action.payload
                 }
             }
             case "DELETE_ORDERS" :{
@@ -24,11 +24,18 @@ export const orderReducer=(state=initail,action)=>{
                     deleteorder:action.payload
                 }
             }
+            case "GET_ORDER_DETAILS":{
+                return{
+                    loading :true,
+                    order:action.payload
+                }
+            }
       case "Get_Error":
                 return{
                     loading :true,
                     order:action.payload
                 }
+
            
             default:
                 return state
